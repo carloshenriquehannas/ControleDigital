@@ -62,10 +62,11 @@ margin(G)
 Gmf = feedback (Kp*G, 1);
 Gmfz = feedback (Kp*Gz , 1);
 
-%Polos e zeros das funcoes de transferencia em malha fechada
+%Polo e zero das funcoes de transferencia continua em malha fechada
 p = pole(Gmf);
 z = zero(Gmf);
 
+%Polo e zero das funcoes de transferencia discreta em malha fechada
 dp = pole(Gmfz);
 dz = zero(Gmfz);
 
