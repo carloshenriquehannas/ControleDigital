@@ -70,3 +70,12 @@ z = zero(Gmf);
 dp = pole(Gmfz);
 dz = zero(Gmfz);
 
+%Plot da saída do sistema de malha fechada contínuo sobreposto ao discreto
+figure
+step(Gmf*R)
+hold on
+step(Gmfz*R)
+title('Saídas do sistema de malha fechada contínuo e discreto')
+ylabel('Amplitude R')
+legend(['continuo';'discreto']);
+
