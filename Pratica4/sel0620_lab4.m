@@ -5,7 +5,7 @@ close all;
 zeta = 1.011;
 wn = 1.093;
 R = 1.15;
-Kp = 1;
+Kp = 7.2143;
 G = tf(wn^2, [1 2*zeta*wn wn^2]); %Funcao de Transferencia em malha aberta
 
 wb = bandwidth(G); %Largura de banda em rad/s
@@ -78,4 +78,3 @@ step(Gmfz*R)
 title('Saídas do sistema de malha fechada contínuo e discreto')
 ylabel('Amplitude R')
 legend(['continuo';'discreto']);
-
