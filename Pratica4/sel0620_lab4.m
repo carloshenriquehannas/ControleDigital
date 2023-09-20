@@ -5,7 +5,7 @@ close all;
 zeta = 1.011;
 wn = 1.093;
 R = 1.15;
-Kp = 5;
+Kp = 8;
 G = tf(wn^2, [1 2*zeta*wn wn^2]); %Funcao de Transferencia em malha aberta
 
 %Funcao de transferencia de malha fechada do sistema continuo
@@ -66,8 +66,6 @@ rlocus(G)
 figure
 bode(G)
 margin(G)
-
-
 
 %Polo e zero das funcoes de transferencia continua em malha fechada
 p = pole(Gmf);
