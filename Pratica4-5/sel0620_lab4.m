@@ -5,8 +5,11 @@ close all;
 zeta = 1.011;
 wn = 1.093;
 R = 1.15;
-Kp = 7.2143;
+Kp = 5;
 G = tf(wn^2, [1 2*zeta*wn wn^2]); %Funcao de Transferencia em malha aberta
+
+%Funcao de transferencia de malha fechada do sistema continuo
+Gmf = feedback (Kp*G, 1);
 
 wb = bandwidth(G); %Largura de banda em rad/s
 f = wb/(2*pi); %Largura de banda em Hz
@@ -14,7 +17,13 @@ f = wb/(2*pi); %Largura de banda em Hz
 ws = 35*wb; 
 T0 = (2*pi)/ws; %Periodo de amostragem
 
+
+
+
 Gz = c2d(G, T0, 'zoh'); %Funcao de transferencia no dominio Z
+
+%Funcao de transferencia de malha fechada do sistema discreto
+Gmfz = feedback (Kp*Gz , 1);
 
 %Recupera G para Simulink
 [num, den] = tfdata(G, 'v');
@@ -58,9 +67,7 @@ figure
 bode(G)
 margin(G)
 
-%Funcao de transferencia de malha fechada do sistema continuo e discreto
-Gmf = feedback (Kp*G, 1);
-Gmfz = feedback (Kp*Gz , 1);
+
 
 %Polo e zero das funcoes de transferencia continua em malha fechada
 p = pole(Gmf);
