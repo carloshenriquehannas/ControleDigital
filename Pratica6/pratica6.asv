@@ -49,8 +49,4 @@ title('Sinal de saída y dos sistemas PID e controlador proporcial, com Simulink
 xlabel('Time (seconds)')
 ylabel('Amplitude da saída y(t)')
 
-i1 = find(out.y_c.Time <= 12);
-stepinfo(out.y_c.Data(i1), out.y_c.Time(i1))
-
-i2 = find(out.y_c1.Time <= 12);
-stepinfo(out.y_c1.Data(i2), out.y_c1.Time(i2))
+stepinfo()
