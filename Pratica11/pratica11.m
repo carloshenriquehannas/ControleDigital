@@ -22,7 +22,7 @@ k1 = place(F, H, [0.7703+0.1452i, 0.7703-0.1452i]);
 figure
 stairs(out.x_d.Time, out.x_d.Data, 'r')
 legend(['discreto x1'; 'discreto x2']);
-title('Sinal de estados do sistema contínuo e discreto, com Simulink.')
+title('Sinal de estados do sistema, com Simulink.')
 xlabel('Time (seconds)')
 ylabel('Estados do Sistema')
 

@@ -14,7 +14,7 @@ f = wb/(2*pi); %Largura de banda em Hz
 ws = 35*wb; 
 T0 = (2*pi)/ws; %Periodo de amostragem
 
-Gmf = feedback (G*C, -1);
+Gmf = feedback (G*C, 1);
 
 p = pole(Gmf);
 z = zero(Gmf);
