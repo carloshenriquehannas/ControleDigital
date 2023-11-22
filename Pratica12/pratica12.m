@@ -46,3 +46,11 @@ Ft = transpose(F);
 Ht = transpose (Cd);
 Lt = place(Ft, Ht, [0, 10^(-4)]);
 L = transpose(Lt);
+
+%Plot do resultado do Simulink da entrada u
+figure
+stairs(out.xx.Time, out.xx.Data, 'b')
+%legend(['discreto']);
+title('Curvas dos estados do sistema sobreposta, com Simulink.')
+xlabel('Time (seconds)')
+ylabel('Amplitude')
